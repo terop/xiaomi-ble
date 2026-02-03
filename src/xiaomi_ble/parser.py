@@ -1123,7 +1123,7 @@ def obj484e(
 ) -> dict[str, Any]:
     """From miot-spec: occupancy-status: uint8: 0 - No One, 1 - Has One"""
     """Translate to: occupancy: bool: 0 - Clear, 1 - Detected"""
-    if device_type == "XMOSB01XS":
+    if device_type == "XMOSB01XS" or device_type == "ES3":
         """Translate to: occupancy: bool: 0 - Clear, 1 - Detected, 2 - Clear"""
         device.update_predefined_binary_sensor(
             BinarySensorDeviceClass.OCCUPANCY, xobj[0] == 1
